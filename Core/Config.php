@@ -8,7 +8,7 @@
     public $user     = 'root';
     public $password = '';
 
-    public $baseUrl = 'http://localhost/app/public';
+    public $baseUrl = 'http://localhost/restoran/public';
     
   }
   
