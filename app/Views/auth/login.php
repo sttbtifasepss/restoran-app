@@ -2,7 +2,7 @@
   <div class="card-body">
     <form action="<?php echo $this->base_url('/auth/store_auth') ?>" method="post">
       <div class="text-center">
-        <h3>Login Page</h3>
+        <h3>Halaman Login</h3>
       </div>
       <?php if(!empty($this->sessionFlash('errors'))): ?>
         <div class="alert alert-warning">
@@ -16,15 +16,15 @@
       <hr>
       <table width="100%">
         <tr>
-          <td>NIP</td>
+          <td>NIP <span class="text-danger">*</span></td>
           <td>
-            <input type="text" name="nip" id="" class="form-input" required>
+            <input type="text" name="nip" id="npm" class="form-input" required>
           </td>
         </tr>
         <tr>
-          <td>Password</td>
+          <td>Password <span class="text-danger">*</span></td>
           <td>
-            <input type="password" name="password" id="" class="form-input" required>
+            <input type="password" name="password" id="password" class="form-input" required>
           </td>
         </tr>
       </table>

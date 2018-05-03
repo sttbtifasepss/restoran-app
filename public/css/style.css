@@ -45,3 +45,7 @@ hr {
   background: rgb(255, 188, 65);
   color: #fff;
 }
+
+.text-danger {
+  color: red;
+}

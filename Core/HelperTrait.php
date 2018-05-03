@@ -82,6 +82,17 @@
     }
   }
 
+  public function isAdmin() {
+    $user = $this->model('user');
+    if(!empty($_SESSION['__LOGIN__'])){
+      $sessionUser = $_SESSION['__LOGIN__'];
+      $me = $user->me($sessionUser->id);
+      return $me->jabatan === 'Admin' ? true : false;
+    }else {
+      return false;
+    }
+  }
+
  }
  
 
