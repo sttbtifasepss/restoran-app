@@ -93,6 +93,11 @@
     }
   }
 
+  public function abort($view) {
+    $this->view('errors/' . $view);
+    exit;
+  }
+
  }
  
 

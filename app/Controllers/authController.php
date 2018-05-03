@@ -11,6 +11,7 @@ class authController extends Controller {
   public function index() {
     
     $this->view('layouts/header',[
+      'title' => 'Halaman Login',
       'styles' => [
         $this->base_url('/css/modules/auth/login.css')
       ]
@@ -32,13 +33,13 @@ class authController extends Controller {
       if($this->user->login($this->req('nip'), $this->req('password'))) {
         switch($this->user()->jabatan):
           case"Kasir":
-            $this->redirect('/auth/login');  
+            $this->redirect('/kasir');
           break;
           case"Pelayan":
-            $this->redirect('/auth/login');  
+            $this->redirect('/pelayan');
           break;
           case"Koki":
-            $this->redirect('/auth/login');  
+            $this->redirect('/koki');
           break;
         endswitch;
       }else{
