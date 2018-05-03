@@ -9,6 +9,12 @@ class kokiController extends Controller  {
   }
 
   public function index () {
-    echo 'Koki';
+    $data['user'] = $this->user();
+
+    $this->view('layouts/header', [
+      'title' => 'Halaman Koki'
+    ]);
+    $this->view('member/koki', $data);
+    $this->view('layouts/footer');
   }
 }

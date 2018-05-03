@@ -9,6 +9,12 @@ class kasirController extends Controller  {
   }
 
   public function index () {
-    echo 'Kasir';
+    $data['user'] = $this->user();
+
+    $this->view('layouts/header', [
+      'title' => 'Halaman Kasir'
+    ]);
+    $this->view('member/kasir', $data);
+    $this->view('layouts/footer');
   }
 }

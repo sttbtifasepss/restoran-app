@@ -9,6 +9,12 @@ class pelayanController extends Controller  {
   }
 
   public function index () {
-    echo 'Pelayan';
+    $data['user'] = $this->user();
+
+    $this->view('layouts/header', [
+      'title' => 'Halaman Pelayan'
+    ]);
+    $this->view('member/pelayan', $data);
+    $this->view('layouts/footer');
   }
 }

@@ -9,6 +9,12 @@ class adminController extends Controller  {
   }
   
   public function index () {
-    echo 'Admin';
+    $data['user'] = $this->user();
+
+    $this->view('layouts/header', [
+      'title' => 'Halaman Admin'
+    ]);
+    $this->view('member/admin', $data);
+    $this->view('layouts/footer');
   }
 }
