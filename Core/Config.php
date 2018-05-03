@@ -4,7 +4,7 @@
 
     public $driver   = 'mysql';
     public $host     = 'localhost';
-    public $database = 'frame_lite';
+    public $database = 'restoran';
     public $user     = 'root';
     public $password = '';
 

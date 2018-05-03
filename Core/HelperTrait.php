@@ -34,6 +34,54 @@
     return __DIR__ . '/../public' . '/' . ltrim($path);
   }
 
+  public function flash($name, $data = []){
+    try{
+      if(!is_array($data))
+        throw new Exception("Error:Flash: Data harus berupa array", 1);
+        
+        $lists = !empty($_SESSION['listFlash']) ? json_decode($_SESSION['listFlash']) : [];
+
+        $_SESSION[$name] = json_encode($data);
+        
+        if(count($lists) > 0){
+          foreach($lists as $list){
+            if($list !== $name)
+              array_push($lists, $name);
+          }
+        }else{
+          $lists = [$name];
+        }
+        $_SESSION['listFlash'] = json_encode($lists);
+
+    } catch(Exception $e) {
+      die($e->getMessage());
+    } 
+  }
+
+  public function sessionFlash($name) {
+    return empty($_SESSION[$name]) ? null : json_decode($_SESSION[$name]);
+  }
+
+  public function remove_flash() {
+    if(!empty($_SESSION['listFlash'])){
+        foreach(json_decode($_SESSION['listFlash']) as $flash){
+          unset($_SESSION[$flash]);
+        }
+      }
+  }
+
+  public function user() {
+
+    $user = $this->model('user');
+
+    if(!empty($_SESSION['__LOGIN__'])){
+      $sessionUser = $_SESSION['__LOGIN__'];
+      return $user->me($sessionUser->id);
+    }else {
+      return null;
+    }
+  }
+
  }
  
 

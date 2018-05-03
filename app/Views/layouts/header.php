@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo empty($title) ? 'Application' : $title ?></title>
-
+    <link rel="stylesheet" href="<?php echo $this->base_url('/css/style.css') ?>">
     <?php 
     /**
      * @type: array

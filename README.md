@@ -1,4 +1,4 @@
-# PHP Framework Lite
+# Restoran
 
 Sebuah project kecil untuk memenuhi tugas sekolah dengan menggunakan konsep MVC
 
@@ -13,7 +13,7 @@ Buka file /Core/Config.php
     public $user      = 'database_user';
     public $password  = 'database_password';
 
-    public $baseUrl   = 'http://localhost/php-framework-lite/public';
+    public $baseUrl   = 'http://localhost/restoran-app/public';
     
     ...
 ```
