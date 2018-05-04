@@ -1,6 +1,6 @@
 # Restoran
 
-Sebuah project kecil untuk memenuhi tugas sekolah dengan menggunakan konsep MVC
+Sebuah project kecil untuk memenuhi tugas kuliah dengan menggunakan konsep MVC
 
 # Configurasi
 Buka file /Core/Config.php
