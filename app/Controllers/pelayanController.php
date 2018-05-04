@@ -4,17 +4,17 @@ class pelayanController extends Controller  {
 
   public function __construct() {
     
-    if(!$this->user() || $this->user()->jabatan !== 'Pelayan')
+    if(!$this->user() || $this->user()->jabatan != 'Pelayan')
       $this->abort(404);
   }
 
   public function index () {
     $data['user'] = $this->user();
 
-    $this->view('layouts/header', [
+    $this->view('layouts/login/header', [
       'title' => 'Halaman Pelayan'
     ]);
     $this->view('member/pelayan', $data);
-    $this->view('layouts/footer');
+    $this->view('layouts/login/footer');
   }
 }

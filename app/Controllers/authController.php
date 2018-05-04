@@ -10,14 +10,14 @@ class authController extends Controller {
 
   public function index() {
     
-    $this->view('layouts/header',[
+    $this->view('layouts/default/header',[
       'title' => 'Halaman Login',
       'styles' => [
         $this->base_url('/css/modules/auth/login.css')
       ]
     ]);
     $this->view('auth/login');
-    $this->view('layouts/footer');
+    $this->view('layouts/default/footer');
 
   }
 
@@ -41,6 +41,9 @@ class authController extends Controller {
           case"Koki":
             $this->redirect('/koki');
           break;
+          case"Admin":
+            $this->redirect('/admin');
+          break;
         endswitch;
       }else{
         throw new Exception("NIP atau password tidak cocok!", 1);
@@ -52,6 +55,11 @@ class authController extends Controller {
       $this->redirect('/auth/login');
     }
 
+  }
+
+  public function logout() {
+    unset($_SESSION['__LOGIN__']);
+    $this->redirect('/auth/login');
   }
 
 }
