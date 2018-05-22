@@ -9,16 +9,7 @@ class authController extends Controller {
   }
 
   public function index() {
-    
-    $this->view('layouts/default/header',[
-      'title' => 'Halaman Login',
-      'styles' => [
-        $this->base_url('/css/modules/auth/login.css')
-      ]
-    ]);
     $this->view('auth/login');
-    $this->view('layouts/default/footer');
-
   }
 
   public function store_auth() {

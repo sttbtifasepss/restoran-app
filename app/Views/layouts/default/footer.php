@@ -1,4 +1,8 @@
-  
+
+</div>
+<script src="<?php echo $this->base_url('/js/jquery.js') ?>"></script>
+<script src="<?php echo $this->base_url('/js/bootstrap.min.js') ?>"></script>
+
   <?php 
     /**
      * @type: array
@@ -10,5 +14,5 @@
       }
     }
   ?>
-  </body>
+</body>
 </html>
