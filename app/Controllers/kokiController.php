@@ -6,11 +6,20 @@ class kokiController extends Controller  {
     
     if(!$this->user() || $this->user()->jabatan != 'Koki')
       $this->abort(404);
+
+
+    // Set menu
+    $this->menus = [
+      'Dasboard' => [
+        'link' => $this->base_url('/koki'),
+        'icon' => 'menu-icon icon-home4'
+      ]
+    ];
   }
 
   public function index () {
     $data['user'] = $this->user();
-
+    $this->titlePage = 'Koki Dashboard';
     $this->view('layouts/login/header', [
       'title' => 'Halaman Koki'
     ]);

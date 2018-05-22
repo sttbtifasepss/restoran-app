@@ -6,11 +6,20 @@ class kasirController extends Controller  {
     
     if(!$this->user() || $this->user()->jabatan != 'Kasir')
       $this->abort(404);
+
+
+    // Set menu
+    $this->menus = [
+      'Dasboard' => [
+        'link' => $this->base_url('/kasir'),
+        'icon' => 'menu-icon icon-home4'
+      ]
+    ];
   }
 
   public function index () {
     $data['user'] = $this->user();
-
+    $this->titlePage = 'Kasir Dashboard';
     $this->view('layouts/login/header', [
       'title' => 'Halaman Kasir'
     ]);

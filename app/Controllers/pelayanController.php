@@ -6,11 +6,20 @@ class pelayanController extends Controller  {
     
     if(!$this->user() || $this->user()->jabatan != 'Pelayan')
       $this->abort(404);
+
+
+    // Set menu
+    $this->menus = [
+      'Dasboard' => [
+        'link' => $this->base_url('/pelayan'),
+        'icon' => 'menu-icon icon-home4'
+      ]
+    ];
   }
 
   public function index () {
     $data['user'] = $this->user();
-
+    $this->titlePage = 'Pelayan Dashboard';
     $this->view('layouts/login/header', [
       'title' => 'Halaman Pelayan'
     ]);

@@ -9,6 +9,11 @@ class authController extends Controller {
   }
 
   public function index() {
+
+    if($this->user())
+      $this->hasRedirect();
+
+
     $this->view('auth/login');
   }
 
@@ -22,20 +27,7 @@ class authController extends Controller {
         throw new Exception("Password tidak boleh kosong", 1);
       
       if($this->user->login($this->req('nip'), $this->req('password'))) {
-        switch($this->user()->jabatan):
-          case"Kasir":
-            $this->redirect('/kasir');
-          break;
-          case"Pelayan":
-            $this->redirect('/pelayan');
-          break;
-          case"Koki":
-            $this->redirect('/koki');
-          break;
-          case"Admin":
-            $this->redirect('/admin');
-          break;
-        endswitch;
+        $this->hasRedirect();
       }else{
         throw new Exception("NIP atau password tidak cocok!", 1);
       }
@@ -47,10 +39,27 @@ class authController extends Controller {
     }
 
   }
-
+  
   public function logout() {
     unset($_SESSION['__LOGIN__']);
     $this->redirect('/auth/login');
+  }
+
+  private function hasRedirect() {
+    switch($this->user()->jabatan):
+      case"Kasir":
+        $this->redirect('/kasir');
+      break;
+      case"Pelayan":
+        $this->redirect('/pelayan');
+      break;
+      case"Koki":
+        $this->redirect('/koki');
+      break;
+      case"Admin":
+        $this->redirect('/admin');
+      break;
+    endswitch;
   }
 
 }
