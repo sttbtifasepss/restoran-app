@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2018 pada 14.45
+-- Waktu pembuatan: 23 Bulan Mei 2018 pada 16.01
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -44,7 +44,7 @@ CREATE TABLE `menus` (
 INSERT INTO `menus` (`id`, `nama_menu`, `harga`, `keterangan`, `url_gambar`, `status`) VALUES
 (1, 'Steak The Bigger', '150000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_01_59_18_a3b05c9d9cdbca12cef914a6f433a160.jpg', 1),
 (2, 'Spaghetti Aglio Olio', '56000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_01_38_bd7c3fc5b3a9305aa95f242c4b5dc744.jpg', 1),
-(3, 'Steak Tuna Bakar', '260000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_02_23_ee5783ed40a11ea92a3840be89bf4642.jpg', 1),
+(3, 'Steak Tuna Bakar Enak', '35000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque', '/img/menus/2018_05_23_03_39_45_115211ec9772e971168c7d2708db0866.jpg', 1),
 (4, 'Chicken Nugget With Saus Tomat', '55000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_03_33_6334f06afec60b81c4edf285ac413588.jpg', 1),
 (5, 'Nasi Goreng Special', '45000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_04_11_98e4cca471e56ca25c49c5455b36a791.jpg', 1),
 (6, 'Lumpia Manis Telor', '35000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_04_35_67fc7e7403b1959d259c0f43fbc3b499.jpg', 1),

@@ -28,6 +28,16 @@
       return $statement->execute($data);
     }
 
+    public function update ($table, $data = [], $condition = '') {
+      $fields = '';
+      foreach($data as $field => $value) {
+        $fields .= $field . ' = :' . $field . ',';
+      }
+      
+      $statement = self::$db->prepare('UPDATE ' . $table . ' SET ' . rtrim($fields, ',') . ' ' . $condition);
+      return $statement->execute($data);
+    }
+    
     public function select($table, $fields = ['*'], $condition = '') {
       $select = '';
       foreach($fields as $field) {

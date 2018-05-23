@@ -36,11 +36,12 @@
         <div class="form-group">
           <label for="image">Gambar Menu <span class="text-danger">*</span></label>
           <input type="file" name="image" id="image" class="form-control" required>
-          <small>* Silakan masukan gambar dengan rasio 1:1</small>
+          <small>* Silakan masukan gambar dengan ukurang 400 x 300 px</small>
         </div>
         <hr />
         <div class="form-group">
-          <button class="btn btn-primary btn-block">TAMBAHKAN</button>
+          <button class="btn btn-primary">TAMBAHKAN</button>
+          <a href="<?php echo $this->base_url('/admin/menus') ?>" class="btn btn-default pull-right">BATAL</a>
         </div>
 
       </div>

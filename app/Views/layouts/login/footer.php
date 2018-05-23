@@ -166,31 +166,5 @@
             </div><!-- /Page Content -->
         </div><!-- /Page Container -->
 
-  <!-- Javascripts -->
-      <script src="<?php echo $this->base_url('plugins/jquery/jquery-3.1.0.min.js') ?>"></script>
-      <script src="<?php echo $this->base_url('plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
-      <script src="<?php echo $this->base_url('plugins/jquery-slimscroll/jquery.slimscroll.min.js') ?>"></script>
-      <script src="<?php echo $this->base_url('plugins/uniform/js/jquery.uniform.standalone.js') ?>"></script>
-      <script src="<?php echo $this->base_url('plugins/switchery/switchery.min.js') ?>"></script>
-      <script src="<?php echo $this->base_url('js/space.min.js') ?>"></script>
-
-      <?php 
-        /**
-         * @type: array
-         * Please add the path url
-        */
-        if(!empty($scripts) && is_array($scripts)){
-          foreach($scripts as $script) {
-            echo '<script src="' . $script . '"></script>';
-          }
-        }
-      ?>
-
-      <script>
-        $(function() {
-            $('.datatable').DataTable();
-        });
-        </script>
-
     </body>
 </html>
