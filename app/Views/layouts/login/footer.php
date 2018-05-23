@@ -167,12 +167,12 @@
         </div><!-- /Page Container -->
 
   <!-- Javascripts -->
-      <script src="plugins/jquery/jquery-3.1.0.min.js"></script>
-      <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-      <script src="plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-      <script src="plugins/uniform/js/jquery.uniform.standalone.js"></script>
-      <script src="plugins/switchery/switchery.min.js"></script>
-      <script src="js/space.min.js"></script>
+      <script src="<?php echo $this->base_url('plugins/jquery/jquery-3.1.0.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('plugins/jquery-slimscroll/jquery.slimscroll.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('plugins/uniform/js/jquery.uniform.standalone.js') ?>"></script>
+      <script src="<?php echo $this->base_url('plugins/switchery/switchery.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('js/space.min.js') ?>"></script>
 
       <?php 
         /**
@@ -185,6 +185,12 @@
           }
         }
       ?>
+
+      <script>
+        $(function() {
+            $('.datatable').DataTable();
+        });
+        </script>
 
     </body>
 </html>
