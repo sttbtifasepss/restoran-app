@@ -36,11 +36,13 @@ class adminController extends Controller  {
     
     $this->view('layouts/login/header', [
       'styles' => [
-        $this->base_url('plugins/datatables/css/datatables.bootstrap.min.css')
+        $this->base_url('plugins/datatables/css/datatables.bootstrap.min.css'),
+        $this->base_url('plugins/fancybox/jquery.fancybox.min.css')
       ],
       'scripts' => [
         $this->base_url('plugins/datatables/js/jquery.datatables.min.js'),
-        $this->base_url('plugins/datatables/js/datatables.bootstrap.min.js')
+        $this->base_url('plugins/datatables/js/datatables.bootstrap.min.js'),
+        $this->base_url('plugins/fancybox/jquery.fancybox.min.js')
       ]
     ]);
     $this->view('admin/menus/index', $data);

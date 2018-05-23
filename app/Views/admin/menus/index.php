@@ -24,7 +24,9 @@
         <?php foreach($menus as $menu): ?>
           <tr class="menu-row-<?php echo $menu['id'] ?>">
             <td class="text-center">
-              <img src="<?php echo $this->base_url($menu['url_gambar']) ?>" class="img img-thumbnail" width="100">
+              <a data-fancybox="gallery" href="<?php echo $this->base_url($menu['url_gambar']) ?>">
+                <img src="<?php echo $this->base_url($menu['url_gambar']) ?>" class="img img-thumbnail" width="100">
+              </a>
             </td>
             <td>
               <strong><?php echo $menu['nama_menu'] ?></strong>
