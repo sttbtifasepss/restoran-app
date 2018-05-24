@@ -52,6 +52,7 @@
       <script src="<?php echo $this->base_url('plugins/switchery/switchery.min.js') ?>"></script>
       <script src="<?php echo $this->base_url('js/space.min.js') ?>"></script>
       <script src="<?php echo $this->base_url('js/sweetalert.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('js/jquery.slimscroll.min.js') ?>"></script>
       
       <?php 
         /**

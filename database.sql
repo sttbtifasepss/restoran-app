@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2018 pada 16.01
+-- Waktu pembuatan: 24 Bulan Mei 2018 pada 23.00
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -52,7 +52,7 @@ INSERT INTO `menus` (`id`, `nama_menu`, `harga`, `keterangan`, `url_gambar`, `st
 (8, 'Udang Goreng With Salad', '37500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_05_58_55af8ab52d2394aed31d8b09e689e23c.jpg', 1),
 (9, 'Tuna Sapi Sereh', '99500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_06_24_8b742a78ef5e51bfb3c722d17d35504b.jpg', 1),
 (10, 'Steak with Poteto', '760000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_07_15_d03514f96c1c4683fa424834ec88081f.jpg', 1),
-(11, 'Kentang Saus Rempah dengan Steak', '87500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_08_07_e95fdada4422c5dda9306e85a505e878.jpg', 1);
+(11, 'Kentang Saus Rempah dengan Steak', '87500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_24_01_17_55_d1e4f3aef068f39438d2f9b5f48f957e.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -63,11 +63,12 @@ INSERT INTO `menus` (`id`, `nama_menu`, `harga`, `keterangan`, `url_gambar`, `st
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `no_order` int(20) NOT NULL,
-  `pelanggan` varchar(100) NOT NULL,
+  `nama_pelanggan` varchar(100) DEFAULT NULL,
   `tgl_order` datetime(6) NOT NULL,
   `total` decimal(65,0) NOT NULL,
   `status_bayar` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `no_meja` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
