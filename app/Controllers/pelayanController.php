@@ -10,20 +10,40 @@ class pelayanController extends Controller  {
 
     // Set menu
     $this->menus = [
-      'Dasboard' => [
+      'Daftar Menus' => [
         'link' => $this->base_url('/pelayan'),
         'icon' => 'menu-icon icon-home4'
       ]
     ];
   }
 
+  // public function index () {
+  //   $data['user'] = $this->user();
+  //   $this->titlePage = 'Pelayan Dashboard';
+  //   $this->view('layouts/login/header', [
+  //     'title' => 'Halaman Pelayan'
+  //   ]);
+  //   $this->view('member/pelayan', $data);
+  //   $this->view('layouts/login/footer');
+  // }
+
   public function index () {
-    $data['user'] = $this->user();
-    $this->titlePage = 'Pelayan Dashboard';
+    $menu = $this->model('menu');
+    $this->titlePage = 'Daftar Menu';
+
+    $menus = $menu->select('menus', ['*'], 'WHERE status = 1');
+    $data['menus'] = $menus;
+    
     $this->view('layouts/login/header', [
-      'title' => 'Halaman Pelayan'
+      'styles' => [
+        $this->base_url('plugins/fancybox/jquery.fancybox.min.css')
+      ],
+      'scripts' => [
+        $this->base_url('plugins/fancybox/jquery.fancybox.min.js')
+      ]
     ]);
-    $this->view('member/pelayan', $data);
+    $this->view('pelayan/menus/menu', $data);
     $this->view('layouts/login/footer');
   }
+
 }
