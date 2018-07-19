@@ -27,6 +27,8 @@
               <p>{{ detail.parent.status }}</p>
               <strong>Tanggal Order</strong>
               <p>{{ detail.parent.tgl_order }}</p>
+              <strong>Jumlah Order</strong>
+              <p>{{ orders.length }} item</p>
             </address>
             <hr>
             <button class="btn btn-primary btn-block" @click="finish(detail.parent)">Masak Selesai</button>
