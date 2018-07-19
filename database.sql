@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Bulan Mei 2018 pada 23.00
+-- Waktu pembuatan: 19 Jul 2018 pada 17.31
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -52,24 +52,34 @@ INSERT INTO `menus` (`id`, `nama_menu`, `harga`, `keterangan`, `url_gambar`, `st
 (8, 'Udang Goreng With Salad', '37500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_05_58_55af8ab52d2394aed31d8b09e689e23c.jpg', 1),
 (9, 'Tuna Sapi Sereh', '99500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_06_24_8b742a78ef5e51bfb3c722d17d35504b.jpg', 1),
 (10, 'Steak with Poteto', '760000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_23_02_07_15_d03514f96c1c4683fa424834ec88081f.jpg', 1),
-(11, 'Kentang Saus Rempah dengan Steak', '87500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_24_01_17_55_d1e4f3aef068f39438d2f9b5f48f957e.jpg', 1);
+(11, 'Kentang Saus Rempah dengan Steak', '87500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque. Pellentesque v', '/img/menus/2018_05_24_01_17_55_d1e4f3aef068f39438d2f9b5f48f957e.jpg', 1),
+(12, 'Gurame Asam Pedas', '45000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero urna, dapibus eget vehicula nec, aliquam at enim. Cras sed ex elit. Proin tristique laoreet turpis ac pellentesque.', '/img/menus/2018_07_19_03_42_30_91101eac73d55fc2f900595504bf4204.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `order`
+-- Struktur dari tabel `orders`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `no_order` int(20) NOT NULL,
-  `nama_pelanggan` varchar(100) DEFAULT NULL,
-  `tgl_order` datetime(6) NOT NULL,
-  `total` decimal(65,0) NOT NULL,
-  `status_bayar` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `no_meja` int(10) NOT NULL
+  `no_order` int(11) DEFAULT NULL,
+  `nama_pelanggan` varchar(45) DEFAULT NULL,
+  `tgl_order` datetime DEFAULT NULL,
+  `total` decimal(10,2) DEFAULT NULL,
+  `status_bayar` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `no_meja` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `orders`
+--
+
+INSERT INTO `orders` (`id`, `no_order`, `nama_pelanggan`, `tgl_order`, `total`, `status_bayar`, `status`, `no_meja`) VALUES
+(1, 41189075, 'Pelanggan', '2018-07-19 16:30:50', '0.00', 'unpaid', 'Antrian Masak', 34),
+(2, 71495399, 'Pelanggan', '2018-07-19 16:31:17', '0.00', 'unpaid', 'Antrian Masak', 20),
+(3, 77319322, 'Pelanggan', '2018-07-19 17:12:54', '0.00', 'unpaid', 'Antrian Masak', 8);
 
 -- --------------------------------------------------------
 
@@ -84,6 +94,19 @@ CREATE TABLE `order_detail` (
   `qty` int(100) NOT NULL,
   `harga` decimal(65,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `menu_id`, `qty`, `harga`) VALUES
+(1, 1, 1, 1, '150000'),
+(2, 2, 1, 1, '150000'),
+(3, 2, 2, 1, '56000'),
+(4, 2, 12, 1, '45000'),
+(5, 3, 3, 1, '35000'),
+(6, 3, 4, 1, '55000'),
+(7, 3, 5, 1, '45000');
 
 -- --------------------------------------------------------
 
@@ -120,9 +143,9 @@ ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `order`
+-- Indeks untuk tabel `orders`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -145,19 +168,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `order`
+-- AUTO_INCREMENT untuk tabel `orders`
 --
-ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
