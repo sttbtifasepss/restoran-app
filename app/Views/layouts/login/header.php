@@ -24,6 +24,8 @@
         <link href="<?php echo $this->base_url('css/space.min.css') ?>" rel="stylesheet">
         <link href="<?php echo $this->base_url('css/themes/admin3.css') ?>" rel="stylesheet">
         <link href="<?php echo $this->base_url('css/custom.css') ?>" rel="stylesheet">
+        <link href="<?php echo $this->base_url('css/snackbar.min.css') ?>" rel="stylesheet">
+        
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,6 +55,9 @@
       <script src="<?php echo $this->base_url('js/space.min.js') ?>"></script>
       <script src="<?php echo $this->base_url('js/sweetalert.min.js') ?>"></script>
       <script src="<?php echo $this->base_url('js/jquery.slimscroll.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('js/vue.js') ?>"></script>
+      <script src="<?php echo $this->base_url('js/axios.min.js') ?>"></script>
+      <script src="<?php echo $this->base_url('js/snackbar.min.js') ?>"></script>
       
       <?php 
         /**

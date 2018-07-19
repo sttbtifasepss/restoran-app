@@ -4,6 +4,7 @@
       
     /* PROTECTED AREA */
     public static $db = null;
+    public $lastid;
     public function __construct() {
       $config = new Config();
       self::$db = new PDO($config->driver . ':host=' . $config->host . ';dbname=' . $config->database, $config->user, $config->password);
@@ -25,7 +26,9 @@
         $values .= ':' . $field . ',';
       }
       $statement = self::$db->prepare('INSERT INTO ' . $table . '(' . rtrim($fields, ',') . ')VALUE(' . rtrim($values, ',') . ')');
-      return $statement->execute($data);
+      $excute = $statement->execute($data);
+      $this->lastid = self::$db->lastInsertId();
+      return $excute;
     }
 
     public function update ($table, $data = [], $condition = '') {
@@ -45,6 +48,7 @@
       }
 
       $sql = 'SELECT ' . rtrim($select, ',') . ' FROM ' . $table . ' ' . $condition;
+      
       return self::$db->query($sql);
     }
 
