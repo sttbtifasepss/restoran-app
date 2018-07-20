@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Jul 2018 pada 17.31
+-- Waktu pembuatan: 20 Jul 2018 pada 16.30
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -79,7 +79,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `no_order`, `nama_pelanggan`, `tgl_order`, `total`, `status_bayar`, `status`, `no_meja`) VALUES
 (1, 41189075, 'Pelanggan', '2018-07-19 16:30:50', '0.00', 'unpaid', 'Antrian Masak', 34),
 (2, 71495399, 'Pelanggan', '2018-07-19 16:31:17', '0.00', 'unpaid', 'Antrian Masak', 20),
-(3, 77319322, 'Pelanggan', '2018-07-19 17:12:54', '0.00', 'unpaid', 'Antrian Masak', 8);
+(3, 77319322, 'Pelanggan', '2018-07-19 17:12:54', '0.00', 'paid', 'Antrian Masak', 8);
 
 -- --------------------------------------------------------
 

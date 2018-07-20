@@ -17,16 +17,6 @@ class pelayanController extends Controller  {
     ];
   }
 
-  // public function index () {
-  //   $data['user'] = $this->user();
-  //   $this->titlePage = 'Pelayan Dashboard';
-  //   $this->view('layouts/login/header', [
-  //     'title' => 'Halaman Pelayan'
-  //   ]);
-  //   $this->view('member/pelayan', $data);
-  //   $this->view('layouts/login/footer');
-  // }
-
   public function index () {
     $menu = $this->model('menu');
     $this->titlePage = 'Daftar Menu';
