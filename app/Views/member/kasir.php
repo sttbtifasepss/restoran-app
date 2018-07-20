@@ -87,6 +87,9 @@
               </tfoot>
             </table>
 
+            <div class="text-right">
+              <button class="btn btn-danger" @click="bayar()">Bayar Sekarang</button>
+            </div>
 
           </div>
         </div>
@@ -124,6 +127,33 @@
       this.loadOrders();
     },
     methods : {
+      bayar () {
+        var self = this;
+        swal('Anda yakin ?', {
+          buttons: true
+        }).then(function(status) {
+          if(status) {
+            axios.post('<?php echo $this->base_url('/kasir/bayar') ?>', self.detail)
+              .then(function(json) {
+                if(json.data.result) {
+                  self.detail = [];
+                  self.loadOrders();
+                  self.search = '';
+                  swal(json.data.message, {
+                    icon: 'success'
+                  });
+                }else{
+                  throw "Ada kesalahan sistem pada saat melakukan pesanan!";
+                }
+              })
+              .catch(function(err) {
+                swal(err, {
+                    icon: 'success'
+                  });
+              })
+          }
+        });
+      },
       detailOrder(item) {
         var self = this;
         this.detail = {

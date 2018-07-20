@@ -72,4 +72,24 @@ class kasirController extends Controller  {
     echo json_encode($result);
   }
 
+  public function bayar() {
+    $params = json_decode(file_get_contents('php://input'));
+    $orders = $this->model('order');
+    $data = [
+      'status_bayar' => 'paid'
+    ];
+
+    $update = $orders->update('orders', $data, 'WHERE id = ' . $params->parent->id);
+    if($update) {
+      echo json_encode([
+        'result' => true,
+        'message' => 'Invoice #' . $params->parent->no_order . ' sudah lunas'
+      ]);
+    } else {
+      echo json_encode([
+        'result' => false
+      ]);
+    }
+  }
+
 }

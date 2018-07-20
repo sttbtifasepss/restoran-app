@@ -15,6 +15,10 @@ class adminController extends Controller  {
       'Daftar Menu' => [
         'link' => $this->base_url('/admin/menus'),
         'icon' => 'menu-icon icon-format_list_bulleted'
+      ],
+      'Laporan' => [
+        'link' => $this->base_url('/admin/laporan'),
+        'icon' => 'menu-icon fa fa-file'
       ]
     ];
   }
@@ -148,6 +152,28 @@ class adminController extends Controller  {
       'result' => false,
       'message' => 'Ada kesalahan saat menghapus menu!'
     ]);
+  }
+
+  public function laporan () {
+
+    $data = [];
+
+    $orders = $this->model('order');
+    $data['items'] = $orders->select('order_detail', ['orders.*', 'SUM(order_detail.harga) as grandtotal'], 'INNER JOIN orders ON orders.id = order_detail.order_id WHERE orders.status_bayar = "paid" GROUP BY orders.id ORDER BY orders.id ASC');
+    $this->titlePage = 'Laporan Pemesanan';
+    $this->view('layouts/login/header', [
+      'styles' => [
+        $this->base_url('plugins/datatables/css/datatables.bootstrap.min.css'),
+        $this->base_url('plugins/fancybox/jquery.fancybox.min.css')
+      ],
+      'scripts' => [
+        $this->base_url('plugins/datatables/js/jquery.datatables.min.js'),
+        $this->base_url('plugins/datatables/js/datatables.bootstrap.min.js'),
+        $this->base_url('plugins/fancybox/jquery.fancybox.min.js')
+      ]
+    ]);
+    $this->view('admin/laporan', $data);
+    $this->view('layouts/login/footer');
   }
 
 }

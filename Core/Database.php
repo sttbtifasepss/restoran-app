@@ -44,11 +44,10 @@
     public function select($table, $fields = ['*'], $condition = '') {
       $select = '';
       foreach($fields as $field) {
-        $select .= $field;
+        $select .= $field . ',';
       }
 
       $sql = 'SELECT ' . rtrim($select, ',') . ' FROM ' . $table . ' ' . $condition;
-      
       return self::$db->query($sql);
     }
 
