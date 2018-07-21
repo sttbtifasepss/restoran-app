@@ -108,6 +108,7 @@
         axios.get('<?php echo $this->base_url('/koki/orders') ?>')
           .then(function(json) {
             self.orders = json.data;
+            self.detailOrder(json.data[0]);
           })
       },
       finish (item) {

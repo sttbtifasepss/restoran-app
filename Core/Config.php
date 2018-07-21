@@ -8,7 +8,7 @@
     public $user     = 'root';
     public $password = '';
 
-    public $baseUrl = 'http://localhost/restoran/public';
+    public $basePath = '/restoran/public'; // Masukan path tanpa domain
     
   }
   

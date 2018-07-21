@@ -125,6 +125,10 @@
     mounted() {
       var self = this;
       this.loadOrders();
+
+      setInterval(function() {
+        self.loadOrders();
+      }, 3000);
     },
     methods : {
       bayar () {

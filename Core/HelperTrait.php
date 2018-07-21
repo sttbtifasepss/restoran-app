@@ -20,7 +20,7 @@
 
   public function base_url($path){
     $app = new Config();
-    return rtrim($app->baseUrl, '/') . '/' . ltrim($path, '/');
+    return 'http://' . $_SERVER['HTTP_HOST'] . rtrim($app->basePath, '/') . '/' . ltrim($path, '/');
   }
 
   public function redirect($path){

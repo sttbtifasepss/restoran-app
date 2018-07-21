@@ -35,7 +35,7 @@
     <body>
         
         <!-- Page Container -->
-        <div class="page-container" style="overflow:hidden;">
+        <div class="page-container">
                 <!-- Page Inner -->
                 <div class="page-inner login-page">
                     <div id="main-wrapper" class="container-fluid">
@@ -68,8 +68,6 @@
                         </div>
                     </div>
             </div><!-- /Page Content -->
-
-            <img src="<?php echo $this->base_url('/img/splash.png') ?>" class="image-splash">
         </div><!-- /Page Container -->
         
         <!-- Javascripts -->

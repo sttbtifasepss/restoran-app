@@ -97,7 +97,7 @@ class adminController extends Controller  {
   }
 
 
-  public function edit_menus (INT $id = 0) {
+  public function edit_menus ($id = 0) {
     $menu = $this->model('menu');
 
     $this->titlePage = 'Edit Menu';
